@@ -15,11 +15,11 @@ Use MongoDB validation to ensure data consistency.
 ## SBA 319 Requirements
 
 ## Technologies Used
-Node.js
-Express.js
-EJS templating
-HTML
-CSS
-Vanilla JavaScript
+ - Node.js
+ - Express.js
+ - EJS templating
+ - HTML
+ - CSS
+ - Vanilla JavaScript
 
 ## Note
