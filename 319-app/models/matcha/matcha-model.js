@@ -1,6 +1,6 @@
 //reference: https://stackoverflow.com/questions/77131419/how-to-specify-the-schema-for-array-of-jsons-for-intellisense
 // reference: https://www.youtube.com/watch?v=ChiC7zhhQzQ
-
+// reference: https://www.mongodb.com/community/forums/t/how-to-reference-the-objectid-from-one-collection-schema-to-another/203108
 
 import mongoose from 'mongoose';
 
