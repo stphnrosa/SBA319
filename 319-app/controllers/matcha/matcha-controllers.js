@@ -1,4 +1,4 @@
-import matcha from "../../models/matcha/matcha-model.js";
+import Matcha from "../../models/matcha/matcha-model.js";
 
 async function seedMatcha(req, res) {
   try {
@@ -63,8 +63,8 @@ async function seedMatcha(req, res) {
 }
 async function getMatcha(req, res) {
   try {
-    const matchas = await Matcha.find({});
-    res.status(200).json(matchas);
+    const Matchas = await Matcha.find({});
+    res.status(200).json(Matchas);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
@@ -72,17 +72,17 @@ async function getMatcha(req, res) {
 async function createMatcha(req, res) {
   try {
     req.body.readyToDrink === "on";
-    const matcha = await Matcha.create(req.body);
+    const Matcha = await Matcha.create(req.body);
   } catch (error) {
     res
       .status(400)
-      .json({ message: "something is wrong.", error: error.message });
+      .json({ message: "Something is wrong.", error: error.message });
   }
 }
 
 async function deleteMatcha(req, res) {
   try {
-    await matcha.findByIdAndDelete(req.params.id);
+    await Matcha.findByIdAndDelete(req.params.id);
     res.status(200).json({ message: "Matcha deleted successfully." });
   } catch (error) {
     res.status(400).json({ error: error.message });
