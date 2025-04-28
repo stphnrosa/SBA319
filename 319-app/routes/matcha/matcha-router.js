@@ -1,14 +1,14 @@
 import express from 'express';
 import * as matchaController from '../../controllers/matcha/matcha-controllers.js';
 
-const router = express.router();
+const router = express.Router();
 
 ///////////////////////////
 // Routes/API Endpoints ///
 //////////////////////////
 
 
-//seed route///
+//seed route
 
 router.get('/seed', matchaController.seedMatcha)
 
@@ -17,3 +17,8 @@ router.get('/', matchaController.getMatcha)
 
 //CREATE
 router.post('/', matchaController.createMatcha)
+
+//DELETE
+router.delete('/:id', matchaController.deleteMatcha)
+
+export default router; //referencing line 4

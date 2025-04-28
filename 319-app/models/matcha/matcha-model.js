@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 const productSchema = new mongoose.Schema({
     productName: { type: String, required: true },
     price:{ type: Number, required: true, min: 0},
-    quantity: { type: Number, required:true, min:1 },
+    quantity: { type: Number, required:true, min:1, max:10 },
 })
 
 
@@ -15,14 +15,13 @@ const productSchema = new mongoose.Schema({
 const matchaSchema = new mongoose.Schema ({
     name: {type: String, required: true, lowercase:true},
     color: { type: String},
-    qty:{ type: Number, min: 0, max: 10 },
-    email: { type: String, unique: true },
+    email: { type: String, unique: true, required:true },
     cart: {type: [productSchema] }
 },{
     timestamps: true 
 });
 
-//always capitalize the model, i.e. "Fruit"
+//always capitalize the model, i.e. "Matcha"
 const Matcha = mongoose.model('Matcha', matchaSchema);
 
 
