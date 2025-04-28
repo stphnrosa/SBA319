@@ -11,6 +11,9 @@ Create MongoDB validation rules.
 Use MongoDB validation to ensure data consistency.
 
 ## Features
+ - Product catalog, featuring various different classes of Matcha
+ - Recipes for various matcha lattes
+ 
 
 ## SBA 319 Requirements
  - Use at least three different data collections within the database (such as users, posts, or comments).
