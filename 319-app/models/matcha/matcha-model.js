@@ -12,14 +12,13 @@ const productSchema = new mongoose.Schema({
 
 
 
-const matchaSchema = new mongoose.Schema ({
-    name: {type: String, required: true, lowercase:true},
-    color: { type: String},
-    email: { type: String, unique: true, required:true },
-    cart: {type: [productSchema] }
-},{
-    timestamps: true 
-});
+const matchaSchema = new mongoose.Schema({
+    name: { type: String, required: true, lowercase: true },
+    color: { type: String },
+    email: { type: String, unique: true, required: true },
+    cart: { type: [productSchema] },
+    readyToDrink: { type: Boolean, default: false }  // 👈 ADD THIS
+  }, { timestamps: true });
 
 //always capitalize the model, i.e. "Matcha"
 const Matcha = mongoose.model('Matcha', matchaSchema);
