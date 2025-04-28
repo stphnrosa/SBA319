@@ -71,14 +71,27 @@ async function getMatcha(req, res) {
 }
 async function createMatcha(req, res) {
   try {
-    req.body.readyToDrink === "on";
+    req.body.readyToDrink === "on" ? true: false;
     const Matcha = await Matcha.create(req.body);
+    res.status(201).json(matcha);
   } catch (error) {
     res
       .status(400)
       .json({ message: "Something is wrong.", error: error.message });
   }
 }
+ async function updateMatcha(req,res) {
+  try {
+    const updatedMatcha=await Matcha.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {new:true}
+    );
+    res.status(200).json(updatedMatcha);
+  } catch (error) {
+    res.status(400).json({message:"Error updating Matcha", error: error.message})
+  }
+ }
 
 async function deleteMatcha(req, res) {
   try {
@@ -89,4 +102,4 @@ async function deleteMatcha(req, res) {
   }
 }
 
-export { seedMatcha, getMatcha, createMatcha, deleteMatcha };
+export { seedMatcha, getMatcha, createMatcha, updateMatcha, deleteMatcha };

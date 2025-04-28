@@ -3,8 +3,8 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import matchaRouter from './routes/matcha/matcha-router.js';
 import Recipes from './models/matcha/post-recipes.js';
-import Matcha from './models/matcha/matcha-model.js'; // capital M for matcha since that's how it's referenced in the match-model file
-import seedMatcha from "./controllers/matcha-controller.js";
+// import Matcha from './models/matcha/matcha-model.js'; // capital M for matcha since that's how it's referenced in the match-model file (this stayed unhighlighted, not sure why)
+import {seedMatcha} from "./controllers/matcha/matcha-controllers.js"; //must be in curly brckets bc thats how its set up in matcha controller file
 
 dotenv.config();
 

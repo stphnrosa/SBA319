@@ -18,6 +18,9 @@ router.get('/', matchaController.getMatcha)
 //CREATE
 router.post('/', matchaController.createMatcha)
 
+//Patch
+router.patch('/:id', matchaController.updateMatcha);
+
 //DELETE
 router.delete('/:id', matchaController.deleteMatcha)
 
